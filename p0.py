@@ -39,8 +39,13 @@ def isAnagram(string1, string2):
     Example of anagrams: (red, der) (abcdefg, bacdgfe)
     """
     if len(string1) == len(string2):
-        QuickSort(string1, 0, (len(string1)-1))
-        QuickSort(string2, 0, (len(string2)-1))
+        x = list(string1)
+        y = list(string2)
+        z = ''
+        QuickSort(x, 0, (len(x)-1))
+        QuickSort(y, 0, (len(y)-1))
+        string1 = z.join(x)
+        string2 = z.join(y)
         if string1 == string2:
             return True
     return False
@@ -54,7 +59,7 @@ def sortByOnesBits(array):
     Return the sorted array
     """
     binQuick(array, 0, (len(array)-1))
-    return
+    return array
     
 def binPart(A, p, r):
     x = bin(A[r]).count('1')
